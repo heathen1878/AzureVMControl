@@ -13,7 +13,7 @@ $DateStamp = $(Get-Date).Day,$(Get-Date).Month,$(Get-Date).Year -join "_"
 $LogFileName = "AzureStartStop_$dateStamp.log"
 
 # Dot reference the functions file
-. c:\scripts\Functions.ps1
+. (Join-Path -Path $StartIn -ChildPath "\functions.ps1")
 
 # Start by logging what we are doing for tracability
 WriteToLog -sLogFile $LogFileName -sLogContent "Script started...$(Get-Date)"
